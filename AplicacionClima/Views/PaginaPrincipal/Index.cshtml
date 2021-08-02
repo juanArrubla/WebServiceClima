@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/Content/estilosPropios.css" rel="stylesheet" />
+
+<h2 style="margin-top:100px">Datos del Clima</h2>
+<div>
+    <label>Seleccione una Pais: </label>
+    <select id="cmbPais"></select>
+    <label>Seleccione una Departamento: </label>
+    <select id="cmbDepto"></select>
+    <label>Seleccione una Ciudad: </label>
+    <select id="cmbCiudad"></select>
+    <input type="button" id="btnBuscar" value="Buscar" class="btn btn-success" />
+</div>
+
+
+<button type="button" onclick="abrirModal(0)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar</button>
+<div id="tabla">
+
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Agregar Climar</h4>
+            </div>
+            <div class="modal-body">
+                <table style="width:80%; margin:auto">
+                    <tr>
+                        <td width="40%">Id</td>
+                        <td width="60%"><input class="limpiar" type="text" id="txtId" readonly /></td>
+                    </tr>
+                    <tr>
+                        <td>Clima</td>
+                        <td><input class="limpiar obligatorio" type="text" id="txtNombre" /></td>
+                    </tr>
+                    <tr>
+                        <td>Ciudad</td>
+                        <td><select class="limpiar obligatorio" id="cmbCiudadPopup"></select></td>
+                    </tr>
+                    <tr>
+                        <td>Grados</td>
+                        <td><input class="limpiar obligatorio" type="text" id="txtGrados" /></td>
+                    </tr>
+                    <tr>
+                        <td>Ingrese Fecha</td>
+                        <td><input class="limpiar obligatorio" type="text" id="datepickerInicio" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAceptar" onclick="agregar()" type="button" class="btn btn-success">Aceptar</button>
+                <button id="btnCancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/scripts/jquery-ui.min.js"></script>
+<script src="~/scripts/datatables.min.js"></script>
+<script src="~/Scripts/PaginaPrincipal.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
